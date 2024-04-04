@@ -1,0 +1,11 @@
+Id,First name,Last name,Test average,Grade
+100001,Kiki,Leaf,97.0,A
+100002,Brian,Shane,57.0,F
+100003,Mang,Line,74.0,C
+100004,Joseph,Bona,54.67,F
+100005,Mocha,Lotte,79.33,C
+100006,Charlotte,Samson,73.0,C
+100007,Tiana,Fergus,76.33,C
+100008,Shiva,Vasquez,72.0,C
+100009,Carmen,Sandiego,96.67,A
+100010,Gumi,Baar,82.0,B

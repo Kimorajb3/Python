@@ -1,0 +1,11 @@
+Student id,First name,Last name,Grade
+100001,Kiki,Leaf,A
+100002,Brian,Shane,F
+100003,Mang,Line,C
+100004,Joseph,Bona,F
+100005,Mocha,Lotte,C
+100006,Charlotte,Samson,C
+100007,Tiana,Fergus,C
+100008,Shiva,Vasquez,C
+100009,Carmen,Sandiego,A
+100010,Gumi,Baar,B
