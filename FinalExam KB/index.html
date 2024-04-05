@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CTC Classes</title>
+
+	<style>
+	#container {
+	width: 600px;
+	margin: 80px auto;
+	overflow: visible;
+	border: 1px dashed #666;
+	padding: 15px;
+	min-height: 200px;
+	}
+
+	title {
+	text-align: center;
+	}
+	
+	#dropDown{
+	margin: 0;
+	padding: 5px;
+	background: #f4f4f4;
+	}
+	
+	#class_info{
+	list-style: none; 
+	padding-left: 5px;
+	}
+	</style>
+	<script src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+	
+	function getClassTitles(){
+	$(document).ready(function(){
+	var obj ={
+	class: [
+      {
+         "Course_Number":"CIST 1305",
+         "Title": "Program Design and Development",
+         "Description":"An introductory course that provides problem solving and programming concepts for those that develop user applications. An emphasis is placed on developing logic, troubleshooting, and using tools to develop solutions.   Topics include: problem solving and programming concepts, structured programming, the four logic structures, file processing concepts, and arrays.",
+         "Credit_Hours":"3",
+         "PreReq_Required":"No"
+      },
+	  {
+         "Course_Number":"CIST 1520",
+         "Title":"Scripting Technologies",
+         "Description":"Students learn how to use the features and structure of a client-side scripting language, explore the features on server side scripting and develop professional web applications that include special effects, interactive, dynamic, validated, and secure forms.",
+         "Credit_Hours":"3",
+         "PreReq_Required":"Yes, CIST 1510"
+      },
+      
+	  {
+         "Course_Number":"CIST 1306",
+         "Title":"Programming Foundations-Swift",
+         "Description":"Learn key computing concepts, building a solid foundation in programming with Swift. Learn about the impact of computing and apps on society, economies, and cultures while exploring iOS app development, including the app design process: brainstorming, planning, prototyping, and evaluating an app design of their own.",
+         "Credit_Hours":"3",
+         "PreReq_Required":"No"
+      },
+	  
+	  {
+         "Course_Number":"CIST 2921",
+         "Title":"IT Analysis Design and Project Mgt",
+         "Description":"IT Analysis, Design, and Project Management will provide a review and application of systems life cycle development methodologies and project management. Topics include: Systems planning, systems analysis, systems design, systems implementation, evaluation, and project management.",
+         "Credit_Hours":"4",
+         "PreReq_Required":"Yes, CIST 1305"
+      }
+	  ]
+	  };
+	  
+	  console.log(obj);
+
+	for (var i = 0; i < obj.class.length; i++) { 
+		$('#dropDown').append('<option value='+obj.class[i].Title+'>'+obj.class[i].Title+'</option>');  
+	}
+	
+	$('#dropDown').on('change',classSelect);	
+	   
+	   function classSelect(){
+		   var select = document.getElementById('dropDown');
+			var option = select.options[select.selectedIndex].text;
+			document.getElementById('class_title').innerHTML = option;
+			 getClassInfo();
+			 }
+			 function getClassInfo(){
+		  if($("#dropDown option:selected").text() == "Program Design and Development") {
+var infolist = document.getElementById('class_info');
+class_info.innerHTML = obj.class[0].Course_Number+ "<br />"+ obj.class[0].Title+ "<br />"+ obj.class[0].Description+ "<br />"+ obj.class[0].Credit_Hours+ "<br />"+ obj.class[0].PreReq_Required;		  
+			
+ } else if ($("#dropDown option:selected").text() == "Scripting Technologies") {
+  var infolist = document.getElementById('class_info');
+	class_info.innerHTML =obj.class[1].Course_Number+ "<br />"+ obj.class[1].Title+ "<br />"+ obj.class[1].Description+ "<br />"+ obj.class[1].Credit_Hours+ "<br />"+ obj.class[1].PreReq_Required;
+ }
+ else if ($("#dropDown option:selected").text() == "Programming Foundations-Swift") {
+  var infolist = document.getElementById('class_info');
+	class_info.innerHTML =obj.class[2].Course_Number+ "<br />"+ obj.class[2].Title+ "<br />"+ obj.class[2].Description+ "<br />"+ obj.class[2].Credit_Hours+ "<br />"+ obj.class[2].PreReq_Required;
+}
+else {
+  var infolist = document.getElementById('class_info');
+	class_info.innerHTML =obj.class[3].Course_Number+ "<br />"+ obj.class[3].Title+ "<br />"+ obj.class[3].Description+ "<br />"+ obj.class[3].Credit_Hours+ "<br />"+ obj.class[3].PreReq_Required;
+}
+}
+		  
+	});
+	
+
+}
+	</script>
+	
+</head>
+<body onload="getClassTitles()">
+<div id="container">
+<h1>My Favorite Classes</h1>
+	<div id="class_title">	
+	</div>
+	<br />
+	<div id="class_info"></div>
+	<br />
+	<select id ="dropDown"></select>
+	</div>
+</body>
+</html>
